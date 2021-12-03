@@ -1,3 +1,9 @@
+#
+# .zshrc
+#
+# by Max Zangs
+#
+
 # Git aliases.
 alias gs='git status'
 alias gc='git commit'
@@ -7,4 +13,4 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 
 # Listing aliases
 alias ll='ls -l'
-alias la='ls -A'
+alias la='ls -la'
