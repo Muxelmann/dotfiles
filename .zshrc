@@ -19,7 +19,26 @@ export PS1=$'\n'"%F{cyan} %*%F{grey} %3~ %F{white}"$'\n'"$ "
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
 
 # Include alias file (if present) containing aliases for ssh, etc.
-if [ -f ~/.aliases ]
-then
+if [ -f ~/.aliases ]; then
   source ~/.aliases
+fi
+
+# Setting up homebrew
+if [ -d /opt/homebrew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    echo "Installing Hombrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Making pyenv available
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init --path)"
+fi
+
+# Exporting OpenJDK if available
+if [ -f /opt/homebrew/opt/openjdk/bin ]; then
+    export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 fi
