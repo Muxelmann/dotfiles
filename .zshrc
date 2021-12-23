@@ -4,9 +4,6 @@
 # by Max Zangs
 # 
 
-# OpenJDK
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
 # Colors.
 unset LSCOLORS
 export CLICOLOR=1
@@ -29,9 +26,8 @@ if [ -d /opt/homebrew ]; then
 fi
 
 # Making pyenv available
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
+    export PYENV_ROOT="$HOME/.pyenv"
     eval "$(pyenv init --path)"
 fi
 
