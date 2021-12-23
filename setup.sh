@@ -1,21 +1,15 @@
 #
-# .zshrc_setup
+# .setup.sh
 #
 # by Max Zangs
 #
 
-# Colors.
-unset LSCOLORS
-export CLICOLOR=1
-export CLICOLOR_FORCE=1
+# Copy dotfiles
+cp .zshrc $HOME
+cp .aliases $HOME
 
-# Nicer looking prompt
-export PS1=$'\n'"%F{cyan} %*%F{grey} %3~ %F{white}"$'\n'"$ "
-
-# Bash-style time output.
-export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
-
-shell_profile="$HOME/.zshrc"
+# Load profile for coloring
+. ~/.zshrc
 
 # Install command line tools
 xcode-select --install
@@ -24,8 +18,6 @@ xcode-select --install
 if [ ! -d /opt/homebrew ]; then
     print -P "%F{green}Installing Hombrew%f"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ${shell_profile}
-    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
     print -P "%F{green}Updating/-grading Homebrew%f"
     brew update
