@@ -52,6 +52,7 @@ brew install --cask displaylink
 brew install --cask github                      # https://desktop.github.com/
 brew install --cask macdown                     # https://macdown.uranusjr.com/
 brew install --cask visual-studio-code          # https://code.visualstudio.com/
+brew install --cask parallels
 
 # Installs extensions for VS Code
 code --install-extension ms-python.python
