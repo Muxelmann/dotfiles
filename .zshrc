@@ -26,7 +26,8 @@ if [ -d /opt/homebrew ]; then
 fi
 
 # Making pyenv available
-if command -v pyenv 1>/dev/null 2>&1; then
+# if command -v pyenv 1>/dev/null 2>&1; then
+if [ -e /opt/homebrew/bin/pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     eval "$(pyenv init --path)"
 fi
