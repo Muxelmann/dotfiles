@@ -47,6 +47,7 @@ brew install --cask microsoft-teams             # https://teams.microsoft.com/do
 brew install --cask adobe-creative-cloud        # https://www.adobe.com/creativecloud.html
 brew install --cask fujitsu-scansnap-home
 brew install --cask displaylink
+brew install --cask remarkable
 
 # Install Developer applications
 brew install --cask github                      # https://desktop.github.com/
