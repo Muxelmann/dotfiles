@@ -64,32 +64,45 @@ code --install-extension WyattFerguson.jinja2-snippet-kit
 # code --install-extension TabNine.tabnine-vscode # AI auto-completion
 # code --install-extension vsciot-vscode.vscode-arduino
 
+# Install apps from AppStore
+
 print -P "%F{green}Install further (non \"essential\") applications? [y/n]%f "
 read yn
 if [ $yn = "y" -o $yn = "Y" ]; then
-    break
+    brew install mas
+    mas install 409203825 # Numbers
+    mas install 409201541 # Pages
+    mas install 409183694 # Keynote
+    mas install 497799835 # Xcode
 else
     exit
 fi
 
-# Install further applications
-brew install --cask sensei                      # https://sensei.app/
-brew install --cask wireshare                   # https://www.wireshark.org
-brew install --cask cyberduck                   # https://cyberduck.io/
-brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
-brew install --cask latexit                     # https://www.chachatelier.fr/latexit/
-# brew install --cask unity-hub                   # https://unity3d.com/get-unity/download
-brew install --cask google-drive                # https://www.google.com/drive/
-brew install --cask insta360-studio
-brew install --cask audio-hijack                # https://rogueamoeba.com/audiohijack/
-brew install --cask fission                     # https://rogueamoeba.com/fission/
-brew install --cask minecraft
+# Install further (non essential) apps
 
-# For making
-brew install --cask arduino                     # https://www.arduino.cc/
-brew install --cask wch-ch34x-usb-serial-driver # CH34 driver for ESP
-brew install --cask paragon-extfs               # https://www.paragon-software.com/ufsdhome/extfs-mac/
-brew install --cask blender                     # https://www.blender.org/
-brew install --cask eagle
-brew install --cask pronterface
-brew install --cask ultimaker-cura
+print -P "%F{green}Install further (non \"essential\") applications? [y/n]%f "
+read yn
+if [ $yn = "y" -o $yn = "Y" ]; then
+
+    # Install further applications
+    brew install --cask sensei                      # https://sensei.app/
+    brew install --cask wireshare                   # https://www.wireshark.org
+    brew install --cask cyberduck                   # https://cyberduck.io/
+    brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
+    brew install --cask latexit                     # https://www.chachatelier.fr/latexit/
+    # brew install --cask unity-hub                   # https://unity3d.com/get-unity/download
+    brew install --cask google-drive                # https://www.google.com/drive/
+    brew install --cask insta360-studio
+    brew install --cask audio-hijack                # https://rogueamoeba.com/audiohijack/
+    brew install --cask fission                     # https://rogueamoeba.com/fission/
+    brew install --cask minecraft
+
+    # For making
+    brew install --cask arduino                     # https://www.arduino.cc/
+    brew install --cask wch-ch34x-usb-serial-driver # CH34 driver for ESP
+    brew install --cask paragon-extfs               # https://www.paragon-software.com/ufsdhome/extfs-mac/
+    brew install --cask blender                     # https://www.blender.org/
+    brew install --cask eagle
+    brew install --cask pronterface
+    brew install --cask ultimaker-cura
+fi
