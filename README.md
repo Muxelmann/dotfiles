@@ -10,3 +10,5 @@ To install the dotfiles and all apps I freuqently use, simply run the following 
 chmod +x setup.sh
 zsh setup.sh
 ```
+
+The installwer will query whether to install "_non-essential_" apps from the AppStore and via Homebrew. If all or none of them should be installed, use the `-all` or `-skip` flag (CI tests with `-skip`).
