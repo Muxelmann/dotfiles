@@ -11,6 +11,14 @@ cp .aliases $HOME
 # Load profile for coloring
 . ~/.zshrc
 
+# Test if everything should be installed by default
+if [ -n "$1" -a "$1" = "-all" ]; then
+    print -P "%F{red}Everything will be installed, i.e. asking Y/N is skipped!%f"
+    install_everything="1"
+else
+    install_everything=""
+fi
+
 # Install command line tools
 xcode-select --install
 
@@ -67,7 +75,11 @@ code --install-extension WyattFerguson.jinja2-snippet-kit
 # Install apps from AppStore
 
 print -P "%F{green}Install further (non \"essential\") applications? [y/n]%f "
-read yn
+if [ -z $install_everything ]; then
+    read yn
+else
+    yn="y"
+fi
 if [ $yn = "y" -o $yn = "Y" ]; then
     brew install mas
     mas install 409203825 # Numbers
@@ -81,7 +93,11 @@ fi
 # Install further (non essential) apps
 
 print -P "%F{green}Install further (non \"essential\") applications? [y/n]%f "
-read yn
+if [ -z $install_everything ]; then
+    read yn
+else
+    yn="y"
+fi
 if [ $yn = "y" -o $yn = "Y" ]; then
 
     # Install further applications
