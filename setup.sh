@@ -14,9 +14,12 @@ cp .aliases $HOME
 # Test if everything should be installed by default
 if [ -n "$1" -a "$1" = "-all" ]; then
     print -P "%F{red}Everything will be installed, i.e. asking Y/N is skipped!%f"
-    install_everything="1"
+    install="everything"
+elif [ -n "$1" -a "$1" = "-skip" ]; then
+    print -P "%F{red}Everything non-essential will be skipped!%f"
+    install="essential only"
 else
-    install_everything=""
+    install=""
 fi
 
 # Install command line tools
@@ -74,12 +77,15 @@ code --install-extension WyattFerguson.jinja2-snippet-kit
 
 # Install apps from AppStore
 
-print -P "%F{green}Install further (non \"essential\") applications? [y/n]%f "
-if [ -z $install_everything ]; then
+if [ -z $install ]; then
+    print -P "%F{green}Install further (non \"essential\") applications from AppStore? [y/n]%f "
     read yn
-else
+elif [ $install = "everything" ]; then
     yn="y"
+elif [ $install = "essential only" ]; then  
+    yn="n"
 fi
+
 if [ $yn = "y" -o $yn = "Y" ]; then
     brew install mas
     mas install 409203825 # Numbers
@@ -92,12 +98,15 @@ fi
 
 # Install further (non essential) apps
 
-print -P "%F{green}Install further (non \"essential\") applications? [y/n]%f "
-if [ -z $install_everything ]; then
+if [ -z $install ]; then
+    print -P "%F{green}Install further (non \"essential\") applications via Homebrew? [y/n]%f "
     read yn
-else
+elif [ $install = "everything" ]; then
     yn="y"
+elif [ $install = "essential only" ]; then  
+    yn="n"
 fi
+
 if [ $yn = "y" -o $yn = "Y" ]; then
 
     # Install further applications
@@ -106,7 +115,6 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     brew install --cask cyberduck                   # https://cyberduck.io/
     brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
     brew install --cask latexit                     # https://www.chachatelier.fr/latexit/
-    # brew install --cask unity-hub                   # https://unity3d.com/get-unity/download
     brew install --cask google-drive                # https://www.google.com/drive/
     brew install --cask insta360-studio
     brew install --cask audio-hijack                # https://rogueamoeba.com/audiohijack/
