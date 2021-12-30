@@ -102,7 +102,7 @@ if [ $yn = "y" -o $yn = "Y" ]; then
 
     # Install further applications
     brew install --cask sensei                      # https://sensei.app/
-    brew install --cask wireshare                   # https://www.wireshark.org
+    brew install --cask wireshark                   # https://www.wireshark.org
     brew install --cask cyberduck                   # https://cyberduck.io/
     brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
     brew install --cask latexit                     # https://www.chachatelier.fr/latexit/
@@ -119,6 +119,5 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     brew install --cask paragon-extfs               # https://www.paragon-software.com/ufsdhome/extfs-mac/
     brew install --cask blender                     # https://www.blender.org/
     brew install --cask eagle
-    brew install --cask pronterface
     brew install --cask ultimaker-cura
 fi
