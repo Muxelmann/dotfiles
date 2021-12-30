@@ -1,6 +1,7 @@
-![CI badge](https://github.com/muxelmann/dotfiles/actions/workflows/blank.yml/badge.svg)
-
 # dotfiles
+
+[![Software License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/Muxelmann/dotfiles/blob/main/LICENSE)
+[![Build, Test, & Lint](https://github.com/muxelmann/dotfiles/actions/workflows/blank.yml/badge.svg)](https://github.com/Muxelmann/dotfiles/blob/main/.github/workflows/blank.yml)
 
 These are my custom dotfiles (copied form `~`) providing convenient macOS behavior. They are used on a daily basis and save some typing.
 
