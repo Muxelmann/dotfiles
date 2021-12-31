@@ -92,8 +92,6 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     mas install 409201541 # Pages
     mas install 409183694 # Keynote
     mas install 497799835 # Xcode
-else
-    exit
 fi
 
 # Install further (non essential) apps
