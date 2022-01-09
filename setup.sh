@@ -75,6 +75,9 @@ code --install-extension WyattFerguson.jinja2-snippet-kit
 # code --install-extension TabNine.tabnine-vscode # AI auto-completion
 # code --install-extension vsciot-vscode.vscode-arduino
 
+# Install Formulas
+brew install java
+
 # Install apps from AppStore
 
 if [ -z $install ]; then
