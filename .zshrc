@@ -33,6 +33,6 @@ if [ -e /opt/homebrew/bin/pyenv ]; then
 fi
 
 # Exporting OpenJDK if available
-if [ -f /opt/homebrew/opt/openjdk/bin ]; then
+if [ -d /opt/homebrew/opt/openjdk/bin ]; then
     export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 fi
