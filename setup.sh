@@ -66,17 +66,20 @@ brew install --cask macdown                     # https://macdown.uranusjr.com/
 brew install --cask visual-studio-code          # https://code.visualstudio.com/
 brew install --cask parallels
 
+
+# Install Formulas
+brew install java
+brew install docker
+
 # Installs extensions for VS Code
 code --install-extension ms-python.python
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-vscode.cpptools
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension WyattFerguson.jinja2-snippet-kit
+code --install-extension ms-azuretools.vscode-docker
 # code --install-extension TabNine.tabnine-vscode # AI auto-completion
 # code --install-extension vsciot-vscode.vscode-arduino
-
-# Install Formulas
-brew install java
 
 # Install apps from AppStore
 
