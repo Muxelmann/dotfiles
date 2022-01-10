@@ -1,5 +1,6 @@
+#!/bin/zsh
 #
-# .setup.sh
+# setup.sh
 #
 # by Max Zangs
 #
