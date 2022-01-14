@@ -1,5 +1,6 @@
+#!/bin/zsh
 #
-# .setup.sh
+# setup.sh
 #
 # by Max Zangs
 #
@@ -66,17 +67,38 @@ brew install --cask macdown                     # https://macdown.uranusjr.com/
 brew install --cask visual-studio-code          # https://code.visualstudio.com/
 brew install --cask parallels
 
+# Install Formulas
+brew install java
+brew install docker
+
 # Installs extensions for VS Code
 code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-vscode.cpptools
+code --install-extension ms-azuretools.vscode-docker
 code --install-extension samuelcolvin.jinjahtml
 code --install-extension WyattFerguson.jinja2-snippet-kit
+code --install-extension mblode.twig-language-2
 # code --install-extension TabNine.tabnine-vscode # AI auto-completion
 # code --install-extension vsciot-vscode.vscode-arduino
 
-# Install Formulas
-brew install java
+CODE_SETTINGS=/Users/$USER/Library/Application\ Support/Code/User/settings.json
+if [ -e $CODE_SETTINGS ]; then
+    rm $CODE_SETTINGS
+    cat <<EOT >> $CODE_SETTINGS
+{
+    "files.associations": {
+        "*.twig": "twig",
+        "*.jinja": "jinja"
+    },
+    "emmet.includeLanguages": {
+        "twig": "html",
+        "jinja": "html",
+    },
+}
+EOT
+fi
 
 # Install apps from AppStore
 
