@@ -90,11 +90,15 @@ if [ -e $CODE_SETTINGS ]; then
 {
     "files.associations": {
         "*.twig": "twig",
-        "*.jinja": "jinja"
+        "*.jinja": "jinja",
+        "*.jinja2": "jinja",
+        "*html.jinja": "jinja-html",
+        "*html.jinja2": "jinja-html"
     },
     "emmet.includeLanguages": {
         "twig": "html",
         "jinja": "html",
+        "jinja-html": "html"
     },
 }
 EOT
