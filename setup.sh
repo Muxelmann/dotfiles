@@ -24,7 +24,7 @@ else
 fi
 
 # Install command line tools
-xcode-select --install
+# xcode-select --install # Will be installed with homebrew
 
 # Install Homebrew or update it
 if [ ! -d /opt/homebrew ]; then
@@ -117,6 +117,8 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     mas install 409201541 # Pages
     mas install 409183694 # Keynote
     mas install 497799835 # Xcode
+    mas install 425264550 # Blackmagic Disk Speed Test
+    mas install 441258766 # Magnet
 fi
 
 # Install further (non essential) apps
