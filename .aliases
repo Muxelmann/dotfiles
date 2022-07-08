@@ -1,8 +1,8 @@
-#
-# .zshrc
-#
-# by Max Zangs
-#
+# 
+# .aliases
+# 
+# @author Max Zangs
+# 
 
 # Git aliases.
 alias gs='git status'
