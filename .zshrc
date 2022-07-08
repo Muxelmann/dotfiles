@@ -1,7 +1,7 @@
 # 
 # .zshrc
 # 
-# by Max Zangs
+# @author Max Zangs
 # 
 
 # Colors.
@@ -10,7 +10,7 @@ export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
 # Nicer looking prompt
-export PS1=$'\n'"%F{cyan} %*%F{grey} %3~ %F{white}"$'\n'"$ "
+export PS1=$'\n'"%F{cyan} %*%F %3~ %F{white}"$'\n'"$ "
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
