@@ -23,9 +23,6 @@ else
     install=""
 fi
 
-# Install command line tools
-# xcode-select --install # Will be installed with homebrew
-
 # Install Homebrew or update it
 if [ ! -d /opt/homebrew ]; then
     print -P "%F{green}Installing Hombrew%f"
@@ -42,63 +39,49 @@ sudo softwareupdate --install-rosetta
 # Also install MacOS Applications included in the tap: homebrew/cask-drivers
 brew tap homebrew/cask-drivers
 
-# Install my essential applications
-brew install --cask bartender                   # https://macbartender.com/
-brew install --cask istat-menus                 # https://bjango.com/mac/istatmenus/
-brew install --cask firefox                     # https://mozilla.org/firefox/
-brew install --cask skype                       # https://www.skype.com/
-brew install --cask vlc                         # https://videolan.org/vlc/
-brew install --cask spotify                     # https://spotify.com/
-brew install --cask handbrake
+# Install essential formulae
 
-# Install Office applications
-brew install --cask microsoft-office            # https://products.office.com/mac/microsoft-office-for-mac/
-brew install --cask synology-drive              # https://www.synology.com/en-us/releaseNote/SynologyDriveClient
-brew install --cask devonthink                  # https://devontechnologies.com/apps/devonthink/
-brew install --cask microsoft-teams             # https://teams.microsoft.com/downloads
-brew install --cask adobe-creative-cloud        # https://www.adobe.com/creativecloud.html
-brew install --cask fujitsu-scansnap-home
-brew install --cask displaylink
-brew install --cask remarkable
+brew install \
+    java \
+    mas \
+    pyenv \
+    sdl2 \
+    sdl2_image \
+    sdl2_mixer \
+    sdl2_ttf \
 
-# Install Developer applications
-brew install --cask github                      # https://desktop.github.com/
-brew install --cask macdown                     # https://macdown.uranusjr.com/
-brew install --cask visual-studio-code          # https://code.visualstudio.com/
-brew install --cask parallels
-brew install --cask docker
+# Install essential casks
 
-# Install Formulas
-brew install java
+brew install --cask \
+    adobe-creative-cloud \
+    bartender \
+    blender \
+    cyberduck \
+    devonthink \
+    docker \
+    firefox \
+    fujitsu-scansnap-home \
+    github \
+    handbrake \
+    istat-menus \
+    macdown \
+    microsoft-office \
+    microsoft-teams \
+    minecraft \
+    parallels \
+    sonos \
+    spotify \
+    ultimaker-cura \
+    visual-studio-code
 
-# Installs extensions for VS Code
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
-code --install-extension ms-toolsai.jupyter
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension samuelcolvin.jinjahtml
-code --install-extension WyattFerguson.jinja2-snippet-kit
-code --install-extension mblode.twig-language-2
-# code --install-extension TabNine.tabnine-vscode # AI auto-completion
-# code --install-extension vsciot-vscode.vscode-arduino
+# Optional casks
 
-CODE_SETTINGS=/Users/$USER/Library/Application\ Support/Code/User/settings.json
-if [ -e $CODE_SETTINGS ]; then
-    rm $CODE_SETTINGS
-    cat <<EOT >> $CODE_SETTINGS
-{
-    "files.associations": {
-        "*.twig": "twig",
-        "*.jinja": "jinja"
-    },
-    "emmet.includeLanguages": {
-        "twig": "html",
-        "jinja": "html",
-    },
-}
-EOT
-fi
+# brew install --cask \
+#     displaylink \
+#     remarkable \
+#     skype \
+#     synology-drive \
+#     vlc
 
 # Install apps from AppStore
 
@@ -121,6 +104,34 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     mas install 441258766 # Magnet
 fi
 
+# Configure Visual Studio Code
+
+CODE_SETTINGS=/Users/$USER/Library/Application\ Support/Code/User/settings.json
+if [ -e $CODE_SETTINGS ]; then
+    rm $CODE_SETTINGS
+    cp settings.json $CODE_SETTINGS
+fi
+
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension samuelcolvin.jinjahtml
+code --install-extension WyattFerguson.jinja2-snippet-kit
+code --install-extension mblode.twig-language-2
+# code --install-extension TabNine.tabnine-vscode # AI auto-completion
+# code --install-extension vsciot-vscode.vscode-arduino
+
+# Install Python 3.10.5 using pyenv
+
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init --path)"
+
+pyenv install 3.10.5
+pyenv global 3.10.5
+pip3 install virtualenv
+
 # Install further (non essential) apps
 
 if [ -z $install ]; then
@@ -135,22 +146,20 @@ fi
 if [ $yn = "y" -o $yn = "Y" ]; then
 
     # Install further applications
-    brew install --cask sensei                      # https://sensei.app/
-    brew install --cask wireshark                   # https://www.wireshark.org
-    brew install --cask cyberduck                   # https://cyberduck.io/
-    brew install --cask mactex-no-gui               # https://www.tug.org/mactex/
-    brew install --cask latexit                     # https://www.chachatelier.fr/latexit/
-    brew install --cask google-drive                # https://www.google.com/drive/
-    brew install --cask insta360-studio
-    brew install --cask audio-hijack                # https://rogueamoeba.com/audiohijack/
-    brew install --cask fission                     # https://rogueamoeba.com/fission/
-    brew install --cask minecraft
+    brew install --cask \
+        sensei \
+        wireshark \
+        mactex-no-gui \
+        latexit \
+        google-drive \
+        insta360-studio \
+        audio-hijack \
+        fission
 
     # For making
-    brew install --cask arduino                     # https://www.arduino.cc/
-    brew install --cask wch-ch34x-usb-serial-driver # CH34 driver for ESP
-    brew install --cask paragon-extfs               # https://www.paragon-software.com/ufsdhome/extfs-mac/
-    brew install --cask blender                     # https://www.blender.org/
-    brew install --cask eagle
-    brew install --cask ultimaker-cura
+    brew install --cask \
+        arduino \
+        wch-ch34x-usb-serial-driver \ # CH34 driver for ESP
+        paragon-extfs \
+        eagle
 fi
