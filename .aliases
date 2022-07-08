@@ -14,3 +14,7 @@ alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %
 # Listing aliases
 alias ll='ls -l'
 alias la='ls -la'
+
+# Virtualenv
+alias mkvenv='python3 -m virtualenv venv'
+alias acvenv='source venv/bin/activate'
