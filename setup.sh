@@ -48,7 +48,7 @@ brew install \
     sdl2 \
     sdl2_image \
     sdl2_mixer \
-    sdl2_ttf \
+    sdl2_ttf
 
 # Install essential casks
 
@@ -71,6 +71,7 @@ brew install --cask \
     parallels \
     sonos \
     spotify \
+    steam \
     ultimaker-cura \
     visual-studio-code
 
