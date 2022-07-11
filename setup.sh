@@ -157,10 +157,10 @@ if [ $yn = "y" -o $yn = "Y" ]; then
         audio-hijack \
         fission
 
-    # For making
+    # For developing (ch34x is for programming ESP using CH340/CH341 chips)
     brew install --cask \
         arduino \
-        wch-ch34x-usb-serial-driver \ # CH34 driver for ESP
+        wch-ch34x-usb-serial-driver \
         paragon-extfs \
         eagle
 fi
