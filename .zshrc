@@ -10,7 +10,8 @@ export CLICOLOR=1
 export CLICOLOR_FORCE=1
 
 # Nicer looking prompt
-export PS1=$'\n'"%F{cyan} %*%F %3~ %F{white}"$'\n'"$ "
+# export PS1=$'\n'"%F{14} %*%F{8} %~ %F{15}"$'\n'"%# "
+PROMPT=$'\n'"%F{14} %*%F{8} %~ %F{15}"$'\n'"%# "
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
