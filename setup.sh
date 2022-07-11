@@ -103,6 +103,7 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     mas install 497799835 # Xcode
     mas install 425264550 # Blackmagic Disk Speed Test
     mas install 441258766 # Magnet
+    mas install 442168834 # SiteSucker
 fi
 
 # Configure Visual Studio Code
