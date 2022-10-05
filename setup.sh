@@ -56,6 +56,7 @@ brew install --cask \
     adobe-creative-cloud \
     bartender \
     blender \
+    fspy \
     cyberduck \
     devonthink \
     docker \
@@ -67,22 +68,26 @@ brew install --cask \
     macdown \
     microsoft-office \
     microsoft-teams \
+    skype \
     minecraft \
     parallels \
     sonos \
     spotify \
     steam \
     ultimaker-cura \
-    visual-studio-code
+    visual-studio-code \
+    vlc
 
 # Optional casks
 
 # brew install --cask \
 #     displaylink \
 #     remarkable \
-#     skype \
-#     synology-drive \
-#     vlc
+#     synology-drive
+
+# Download Blender Plugins
+wget -O ~/Downloads/fSpy-Blender.zip https://github.com/stuffmatic/fSpy-Blender/releases/download/v1.0.3/fSpy-Blender-1.0.3.zip
+
 
 # Install apps from AppStore
 
