@@ -70,7 +70,6 @@ brew install --cask \
     microsoft-teams \
     skype \
     minecraft \
-    parallels \
     sonos \
     spotify \
     steam \
@@ -82,6 +81,7 @@ brew install --cask \
 
 # brew install --cask \
 #     displaylink \
+#     parallels \
 #     remarkable \
 #     synology-drive
 

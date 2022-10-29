@@ -1,4 +1,5 @@
 {
+    "workbench.colorTheme": "Default Dark+",
     "emmet.includeLanguages": {
         "twig": "html",
         "jinja": "html",
