@@ -22,7 +22,7 @@ if [ -f ~/.aliases ]; then
 fi
 
 # Setting up homebrew
-if [ -d /opt/homebrew ]; then
+if [ -e /opt/homebrew/bin/brew ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
