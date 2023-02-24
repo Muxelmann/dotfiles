@@ -53,16 +53,13 @@ brew install \
 # Install essential casks
 
 brew install --cask \
-    adobe-creative-cloud \
     bartender \
     blender \
-    fspy \
     cyberduck \
     devonthink \
     docker \
     firefox \
     fujitsu-scansnap-home \
-    github \
     handbrake \
     istat-menus \
     macdown \
@@ -71,6 +68,7 @@ brew install --cask \
     skype \
     minecraft \
     parallels \
+    sensei \
     sonos \
     spotify \
     steam \
@@ -81,7 +79,10 @@ brew install --cask \
 # Optional casks
 
 # brew install --cask \
+#     adobe-creative-cloud \
 #     displaylink \
+#     fspy \
+#     github \
 #     remarkable \
 #     synology-drive
 
@@ -154,7 +155,6 @@ if [ $yn = "y" -o $yn = "Y" ]; then
 
     # Install further applications
     brew install --cask \
-        sensei \
         wireshark \
         mactex-no-gui \
         latexit \
