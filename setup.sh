@@ -69,6 +69,7 @@ brew install --cask \
     microsoft-excel \
     microsoft-teams \
     minecraft \
+    moneymoney \
     parallels \
     sensei \
     sonos \
@@ -103,55 +104,4 @@ CODE_SETTINGS=/Users/$USER/Library/Application\ Support/Code/User/settings.json
 if [ -e $CODE_SETTINGS ]; then
     rm $CODE_SETTINGS
     cp settings.json $CODE_SETTINGS
-fi
-
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
-code --install-extension ms-toolsai.jupyter
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension samuelcolvin.jinjahtml
-code --install-extension WyattFerguson.jinja2-snippet-kit
-code --install-extension mblode.twig-language-2
-# code --install-extension TabNine.tabnine-vscode # AI auto-completion
-# code --install-extension vsciot-vscode.vscode-arduino
-
-# Install Python 3.10.5 using pyenv
-
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init --path)"
-
-pyenv install 3.10.5
-pyenv global 3.10.5
-pip3 install virtualenv
-
-# Install further (non essential) apps
-
-if [ -z $install ]; then
-    print -P "%F{green}Install further (non \"essential\") applications via Homebrew? [y/n]%f "
-    read yn
-elif [ $install = "everything" ]; then
-    yn="y"
-elif [ $install = "essential only" ]; then  
-    yn="n"
-fi
-
-if [ $yn = "y" -o $yn = "Y" ]; then
-
-    # Install further applications
-    brew install --cask \
-        wireshark \
-        mactex-no-gui \
-        latexit \
-        google-drive \
-        insta360-studio \
-        audio-hijack \
-        fission
-
-    # For developing (ch34x is for programming ESP using CH340/CH341 chips)
-    brew install --cask \
-        arduino \
-        wch-ch34x-usb-serial-driver \
-        paragon-extfs \
-        eagle
 fi
