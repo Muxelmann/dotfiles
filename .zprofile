@@ -1,5 +1,5 @@
 # 
-# .zshrc
+# .zprofile
 # 
 # @author Max Zangs
 # 
