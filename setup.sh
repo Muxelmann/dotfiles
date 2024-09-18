@@ -6,11 +6,11 @@
 #
 
 # Copy dotfiles
-cp .zshrc $HOME
+cp .zprofile $HOME
 cp .aliases $HOME
 
 # Load profile for coloring
-. ~/.zshrc
+. ~/.zprofile
 
 # Test if everything should be installed by default
 if [ -n "$1" -a "$1" = "-all" ]; then
@@ -33,6 +33,12 @@ else
     brew upgrade
 fi
 
+# Install Oh My Zsh
+if [ ! -d /Users/maxi/.oh-my-zsh ]; then
+    print -P "%F{green}Installing Oh My Zsh%f"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+end
+
 # Install Rosetta
 sudo softwareupdate --install-rosetta
 
@@ -53,42 +59,22 @@ brew install \
 # Install essential casks
 
 brew install --cask \
-    bartender \
     blender \
-    cyberduck \
     devonthink \
     docker \
-    firefox \
     fujitsu-scansnap-home \
-    handbrake \
-    istat-menus \
     macdown \
-    microsoft-office \
+    microsoft-powerpoint \
+    microsoft-word \
+    microsoft-excel \
     microsoft-teams \
-    skype \
     minecraft \
     parallels \
     sensei \
     sonos \
     spotify \
-    steam \
-    ultimaker-cura \
     visual-studio-code \
     vlc
-
-# Optional casks
-
-# brew install --cask \
-#     adobe-creative-cloud \
-#     displaylink \
-#     fspy \
-#     github \
-#     remarkable \
-#     synology-drive
-
-# Download Blender Plugins
-wget -O ~/Downloads/fSpy-Blender.zip https://github.com/stuffmatic/fSpy-Blender/releases/download/v1.0.3/fSpy-Blender-1.0.3.zip
-
 
 # Install apps from AppStore
 
@@ -109,7 +95,6 @@ if [ $yn = "y" -o $yn = "Y" ]; then
     mas install 497799835 # Xcode
     mas install 425264550 # Blackmagic Disk Speed Test
     mas install 441258766 # Magnet
-    mas install 442168834 # SiteSucker
 fi
 
 # Configure Visual Studio Code
