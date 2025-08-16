@@ -42,13 +42,13 @@ brew install --cask \
     docker \
     fujitsu-scansnap-home \
     macdown \
-    mas \
     microsoft-powerpoint \
     microsoft-word \
     microsoft-excel \
     microsoft-teams \
     minecraft \
     moneymoney \
+    nextcloud \
     sensei \
     sonos \
     spotify \
